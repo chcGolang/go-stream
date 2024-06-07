@@ -141,7 +141,7 @@ func TestStream(t *testing.T) {
 	).Filter(func(item TestItem) bool {
 		// 过滤掉1的值
 		return item.itemNum != 4
-	}).Distinct(func(item TestItem) any {
+	}).DistinctBy(func(item TestItem) any {
 		// 按itemNum 去重
 		return item.itemNum
 	}).Sorted(func(a, b TestItem) bool {
