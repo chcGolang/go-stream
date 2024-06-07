@@ -75,8 +75,6 @@
 #### ForEach
 
 ```go
-package todocoder
-
 type TestItem struct {
 	itemNum   int
 	itemValue string
@@ -122,8 +120,6 @@ item3peek
 &emsp;&emsp;这几个是go-stream中比较常用的中间处理方法，具体说明在上面已标出。使用的话我们可以在流中一个或多个的组合便用。
 
 ```go
-package todocoder
-
 func TestStream(t *testing.T) {
 	// ForEach
 	res := stream.Of(
@@ -171,8 +167,6 @@ func TestStream(t *testing.T) {
 &emsp;&emsp;这些方法，均属于这里说的简单结果终止方法。代码如下：
 
 ```go
-package todocoder
-
 func TestSimple(t *testing.T) {
 	allMatch := stream.Of(
 		TestItem{itemNum: 7, itemValue: "item7"},
@@ -247,8 +241,6 @@ Map与FlatMap都是用于转换已有的元素为其它元素，区别点在于�
 比如我要把 int 1 转为 TestItem{itemNum: 1, itemValue: "item1"}
 
 ```go
-package todocoder
-
 func TestMap(t *testing.T) {
 	res := stream.Of([]int{1, 2, 3, 4, 7}...).Map(func(item int) any {
 		return TestItem{
@@ -293,8 +285,6 @@ func TestFlatMap(t *testing.T) {
 > 可以看如下代码
 
 ```go
-package todocoder
-
 func TestMap(t *testing.T) {
 	res := stream.Of(
 		TestItem{itemNum: 3, itemValue: "item3"},
